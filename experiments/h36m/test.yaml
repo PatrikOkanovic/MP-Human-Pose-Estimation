@@ -1,0 +1,27 @@
+GPUS: '0'
+OUTPUT_DIR: 'output'
+LOG_DIR: 'log'
+WORKERS: 0
+PRINT_FREQ: 100
+EXP_NAME: 'demo'
+DATASET:
+  DATASET: both
+  ROOT: 'data/h36m/'
+  TEST_SET: test
+MODEL:
+  NAME: pose3d_vol
+  BACKBONE: resnext101_32x8d
+  TIME_STR: '' # <-- ADD TIME_STRING HERE!
+  NUM_JOINTS: 17
+  DEPTH_RES: 72
+  VOLUME:
+      FINAL_CONV_KERNEL: 1
+      DECONV_WITH_BIAS: false
+      NUM_DECONV_LAYERS: 3
+      NUM_DECONV_FILTERS: 256
+      BN_MOMENTUM: 0.1
+  IMAGE_SIZE: [288, 384]
+TEST:
+  BATCH_SIZE: 32
+DEBUG:
+  DEBUG: false

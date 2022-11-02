@@ -1,0 +1,1 @@
+vim "$(ls -t lsf* | head -n1)"

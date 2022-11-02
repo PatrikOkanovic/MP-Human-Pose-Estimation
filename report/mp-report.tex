@@ -1,0 +1,44 @@
+% Use a modified ACM conference proceedings template
+\documentclass[sigconf]{acmart}
+% Disable some elements from ACM template
+\setcopyright{none}
+\settopmatter{printacmref=false,printfolios=false}
+
+\usepackage{booktabs} % For formal tables
+\usepackage[ruled,vlined]{algorithm2e}
+\usepackage{amsmath} % for writing algorithms
+\newcommand{\todo}[1]{{\color{red}{#1}}}
+
+\begin{document}
+\title{Machine Perception Report}
+
+\author{Fatjon Zogaj}\affiliation{}
+\email{fzogaj@student.ethz.ch}
+
+\author{Patrik Okanovic}\affiliation{}
+\email{pokanovic@student.ethz.ch}
+
+\author{Rafael Sterzinger}\affiliation{}
+\email{rsterzinger@student.ethz.ch}
+
+\begin{abstract}
+    This paper compares a variety of different architectures and techniques
+    for the challenge of monocular 3D human pose estimation challenge on the H36M~\cite{h36m_pami} dataset.
+    We propose to make use of standard augmentation and occlusion~\cite{sarandi_synthetic_2018},
+    volumetric heatmap regression~\cite{sun_integral_2018-1} in combination with a pretrained ResNext101~\cite{DBLP:journals/corr/XieGDTH16}
+    backbone for the highest score.
+    Human joints follow the underlying structure
+    of a graph which is why we also examine Graph Convolutional Network~\cite{zhao2019gcn}
+    which we combine with evolutionary training data~\cite{Li_2020_CVPR}.
+    Our best ResNext101 backed model is able to achieve state of art.
+%Briefly summarize your report here. This should include a description of the task you are solving, a summary of how you approach the task (i.e. your method), as well as a preview of the central result. The abstract should be short, i.e. 4-5 sentences. The rest of this template outlines a rough structure how you \emph{can} organize your report. It mentions all the components we would typically expect. It is a good idea to adhere these guidelines, but they are not binding, i.e., you are free to re-organize your report as you see fit.
+\end{abstract}
+
+\maketitle
+
+\input{mp-report-body}
+
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{bibliography}
+
+\end{document}
